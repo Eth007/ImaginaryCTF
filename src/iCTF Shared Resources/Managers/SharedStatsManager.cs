@@ -25,7 +25,7 @@ namespace iCTF_Shared_Resources.Managers
             int teamsCount = await context.Teams.Where(x => x.Solves.Any()).CountAsync();
             int playersCount = await context.Users.Where(x => x.Solves.Any() && x.Team == null).CountAsync();
 
-            var challengesInfo = await context.Challenges.Where(x => x.State == 2).OrderByDescending(x => x.ReleaseDate).Select(x => new ChallengeInfo { Challenge = x, SolvesCount = x.Solves.Count }).ToListAsync();
+            var challengesInfo = await context.Challenges.Where(x => x.State == 2).OrderBy(x => x.Solves.Count).Select(x => new ChallengeInfo { Challenge = x, SolvesCount = x.Solves.Count }).ToListAsync();
 
             int score;
             if (dynamicScoring)
@@ -58,7 +58,7 @@ namespace iCTF_Shared_Resources.Managers
             int teamsCount = await context.Teams.Where(x => x.Solves.Any()).CountAsync();
             int playersCount = await context.Users.Where(x => x.Solves.Any() && x.Team == null).CountAsync();
 
-            var challengesInfo = await context.Challenges.Where(x => x.State == 2).OrderByDescending(x => x.ReleaseDate).Select(x => new ChallengeInfo { Challenge = x, SolvesCount = x.Solves.Count }).ToListAsync();
+            var challengesInfo = await context.Challenges.Where(x => x.State == 2).OrderBy(x => x.ReleaseDate).Select(x => new ChallengeInfo { Challenge = x, SolvesCount = x.Solves.Count }).ToListAsync();
 
             int score;
             if (dynamicScoring)

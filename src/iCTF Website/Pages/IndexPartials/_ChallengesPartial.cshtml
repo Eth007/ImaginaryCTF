@@ -1,4 +1,4 @@
-﻿@model IndexModel
+@model IndexModel
 @using Westwind.AspNetCore.Markdown;
 
 @{
@@ -6,37 +6,79 @@
 }
 
 <div class="bg-lighter-gray">
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-md-6 px-4">
-                <h1>Daily CTF Challenges</h1>
-                <hr />
-                <p>CTF challenges are released every day which you can solve to get a spot on our leaderboard and compete with other players!</p>
-                @if (Model.Config != null) {
-                    <h5>Next Challenge In</h5>
-                    <h5 class="mb-4" id="countdown" target="@Model.Config.ReleaseTime">00:00:00</h5>
-                }
-                <a class="btn btn-lg btn-outline btn-outline-dark rounded-button mb-4" asp-page="Challenges">Go To Challenges</a>
-            </div>
-            <div class="col-md-6 px-4">
-                @if (challenge != null) {
-                    <div class="card challenge">
-                        <div class="card-header challenge-header">
-                            @challenge.Title (@(challenge.Points)pts)
-                        </div>
-                        <div class="card-body challenge-body">
-                            <b>Description</b><br />
-                            @Markdown.ParseHtmlString(challenge.Description)
-                            <b>Attachments</b><br />
-                            @Markdown.ParseHtmlString(challenge.Attachments)
-                            <b>Category</b><br />
-                            <p>@challenge.Category</p>
-                            <b>Author</b><br />
-                            <p>@challenge.Author</p>
-                        </div>
-                    </div>
-                }
-            </div>
+    <div class="container py-4">
+<!--                <h1>About</h1> -->
+<!--                <hr /> -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">About</h5>
+          <p class="card-text">ImaginaryCTF 2022 is a cybersecurity <a class="gray-text text-decoration-none cool-link" href="https://ctftime.org/ctf-wtf/" target="_blank">CTF competition</a> run by <a class="gray-text text-decoration-none cool-link" href="https://imaginaryctf.org" target="_blank">ImaginaryCTF</a> with a variety of challenges for all skill levels. It runs from July 15 to July 18, starting and ending at 8 PM UTC. For more information, check out last year's challenges from <a class="gray-text text-decoration-none cool-link" href="https://ctftime.org/event/1384" target="_blank">ImaginaryCTF 2021</a>, where over 1000 teams participated.</p>
         </div>
+      </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Challenges</h5>
+          <p class="card-text">Teams will be challenged to discover vulnerabilities in websites, crack codes, and recover information through challenges in cryptography, binary exploitation, web exploitation, forensics, reversing, and more. We hope that you will learn something new from our challenges!</p>
+        </div>
+     </div>
+  </div>
+  <div class="col-lg-6 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Prizes</h5>
+        <p class="card-text">
+1st place - 300 USD, $250 DigitalOcean credits<br>
+2nd place - 250 USD, $250 DigitalOcean credits<br>
+3rd place - 200 USD, $250 DigitalOcean credits<br>
+4th place - 150 USD, $125 DigitalOcean credits<br>
+5th place - 150 USD, $125 DigitalOcean credits<br>
+6th-13th place - $125 DigitalOcean credits<br>
+Prizes for the best writeups at the end of the competition<br>
+Prizes are subject to change.
+         </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 mb-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Daily CTF Challenges</h5>
+        <p class="card-text">If you would like to do some CTF before or after this competition, we do host daily CTF challenges on our <a class="gray-text text-decoration-none cool-link" href="https://imaginaryctf.org" target="_blank">main website</a> and <a class="gray-text text-decoration-none cool-link" href="https://discord.gg/QxFdGYPd4P" target="_blank">Discord server</a>. You can join the competition for practice, or just for fun, as we will continue hosting them throughout the year.<br><br>We also have an active community around our daily challenges to provide support and help! Our daily challenges use the same Discord server as the server for this event, so feel free to stick around after the competition.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="bg-light-gray">
+    <div class="container py-4">
+      <h2>ImaginaryCTF 2022 ends in:</h2>
+      <h2 id="cd"></h2>
+      <a class="btn btn-lg btn-outline btn-outline-dark rounded-button" asp-page="Register">Register Here</a>
     </div>
 </div>
+
+<script>
+// I wonder where this code is from... :P
+var countDownDate = new Date(Date.UTC(2022, 6, 18, 20, 0, 0)).getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("cd").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("cd").innerHTML = "ImaginaryCTF 2022 has ended!";
+  }
+}, 1000);
+</script>

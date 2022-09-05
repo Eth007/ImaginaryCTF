@@ -24,7 +24,7 @@
     List<ChallengeInfo> solvedChallengeInfos = new List<ChallengeInfo>();
     if (!signInManager.IsSignedIn(User))
     {
-        challengeInfos = await context.Challenges.Where(x => x.State == 2).OrderByDescending(x => x.ReleaseDate).Select(x => new ChallengeInfo { Challenge = x, SolvesCount = x.Solves.Count }).ToListAsync();
+        challengeInfos = await context.Challenges.Where(x => x.State == 2).OrderBy(x => x.Solves.Count).Select(x => new ChallengeInfo { Challenge = x, SolvesCount = x.Solves.Count }).ToListAsync();
         categories = challengeInfos.Select(x => x.Challenge.Category).Distinct().ToList();
     }
     else
@@ -51,12 +51,6 @@
 <div class="container">
     <h1 class="text-center m-3">Challenges</h1>
     <div>
-        <!--
-        Already here for ImaginaryCTF 2022
-        <div class="alert alert-warning">
-            Because we will be running ImaginaryCTF 2022 from July 23 to July 27 no challenges will be released during those days. We encourage anyone that still wants to solve challenges during this time to join <a href="https://2022.imaginaryctf.org" target="_blank" class="text-decoration-none cool-link">ImaginaryCTF 2022</a> for 42+ additional challenges.
-        </div>
-        -->
     </div>
     <div class="row">
         @if (config != null && config.IsFinished)
@@ -72,7 +66,7 @@
             <div class="col-md-6 offset-md-3">
                 <form method="post">
                     <div class="input-group mb-3">
-                        <input name="flag" type="text" class="form-control" placeholder="ictf{s0m3_1337_f14g}">
+                        <input name="flag" type="text" class="form-control" placeholder="ictf{s0m3_1337_f1ag}">
                         <div class="input-group-append">
                             <button class="btn btn-outline-success" type="submit">Submit Flag</button>
                         </div>
@@ -98,7 +92,7 @@
         }
         @if (challengeInfos.Count == 0 && solvedChallengeInfos.Count == 0)
         {
-            <p>Looks like no challenges have been released during this round yet :'(</p>
+            <p>ImaginaryCTF 2022 has not started yet.</p>
         }
         @foreach (string category in categories)
         {
@@ -110,7 +104,7 @@
                 <div class="col-md-6 col-lg-4 mb-3">
                     <div class="card challenge">
                         <div class="card-header challenge-header fw-bold">
-                            @challenge.Title (@(dynamicScoring ? DynamicScoringManager.GetPointsFromSolvesCount(challengeInfo.SolvesCount) : challenge.Points)pts) - @challenge.ReleaseDate.ToString("dd/MM")
+                            @challenge.Title (@(dynamicScoring ? DynamicScoringManager.GetPointsFromSolvesCount(challengeInfo.SolvesCount) : challenge.Points)pts)
                         </div>
                         <div class="card-body">
                             <a class="text-decoration-none view-challenge-btn py-1 px-4" data-bs-toggle="modal" data-bs-target="#challenge-modal-@(challenge.Id)" href="#">
@@ -123,7 +117,7 @@
                     <div class="modal-dialog modal-dialog-centered modal-lg">
                         <div class="modal-content text-dark">
                             <div class="modal-header">
-                                <h5 class="modal-title text-center w-100">@challenge.Title (@(dynamicScoring ? DynamicScoringManager.GetPointsFromSolvesCount(challengeInfo.SolvesCount) : challenge.Points)pts) <span class="d-inline-block">- @challengeInfo.SolvesCount solves</span><br /><small class="text-muted">by @challenge.Author</small></h5>
+                                <h5 class="modal-title text-center w-100">@challenge.Title (@(dynamicScoring ? DynamicScoringManager.GetPointsFromSolvesCount(challengeInfo.SolvesCount) : challenge.Points) pts) <span class="d-inline-block">- @challengeInfo.SolvesCount solves</span><br /><small class="text-muted">by @challenge.Author</small></h5>
                             </div>
                             <div class="modal-body pb-0">
                                 <b>Description</b>

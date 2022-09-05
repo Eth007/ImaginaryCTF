@@ -29,7 +29,7 @@ namespace iCTF_Website.Controllers {
         [RequireRoles("Administrator")]
         public async Task<IActionResult> CtftimeAsync()
         {
-            var top = await SharedLeaderboardManager.GetTopUsersAndTeams(_context, int.MaxValue);
+            var top = await SharedLeaderboardManager.GetTopUsersAndTeams(_context, int.MaxValue, true);
             var teams = new List<dynamic>();
 
             for (int i = 0; i < top.Count; i++)

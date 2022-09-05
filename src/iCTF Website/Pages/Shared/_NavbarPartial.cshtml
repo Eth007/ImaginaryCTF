@@ -8,7 +8,7 @@
             <div class="navbar-brand float-start ms-2">
                 <img src="/img/logo.png" height="40" class="d-inline-block align-middle logo-img" alt="iCTF">
             </div>
-            <span class="logo-text text-white">ImaginaryCTF</span>
+            <span class="logo-text text-white">ImaginaryCTF 2022</span>
         </a>
         <button class="navbar-toggler sidenav-toggler float-end m-1" type="button">
             <span class="navbar-toggler-icon"></span>
@@ -18,47 +18,38 @@
         <ul class="navbar-nav p-2 pl-1 pr-1 big-rounded">
             <li class="nav-item menu-item mt-1 border-bottom border-2 text-nowrap">
                 <div class="nav-roo-container float-start ms-3">
-                    <img class="nav-roo" src="/img/rooYay.png" />
+                    
                 </div>
                 <a class="nav-link menu-link" href="/">Home Page</a>
                 <div class="nav-roo-container float-end me-3">
-                    <img class="nav-roo" src="/img/rooYay.png" />
+                    
                 </div>
             </li>
             <li class="nav-item menu-item mt-2 border-bottom border-2 text-nowrap">
                 <div class="nav-roo-container float-start ms-3">
-                    <img class="nav-roo" src="/img/rooYay.png" />
+                    
                 </div>
                 <a class="nav-link menu-link" asp-page="Challenges">Challenges</a>
                 <div class="nav-roo-container float-end me-3">
-                    <img class="nav-roo" src="/img/rooYay.png" />
+                    
                 </div>
             </li>
             <li class="nav-item menu-item mt-2 border-bottom border-2 text-nowrap">
                 <div class="nav-roo-container float-start ms-3">
-                    <img class="nav-roo" src="/img/rooYay.png" />
+                    
                 </div>
                 <a class="nav-link menu-link" asp-page="Leaderboard">Leaderboard</a>
                 <div class="nav-roo-container float-end me-3">
-                    <img class="nav-roo" src="/img/rooYay.png" />
+                    
                 </div>
             </li>
             <li class="nav-item menu-item mt-2 border-bottom border-2 text-nowrap">
                 <div class="nav-roo-container float-start ms-3">
-                    <img class="nav-roo" src="/img/rooYay.png" />
+                    
                 </div>
                 <a class="nav-link menu-link" asp-page="Solves">Solves</a>
                 <div class="nav-roo-container float-end me-3">
-                    <img class="nav-roo" src="/img/rooYay.png" />
-                </div>
-            </li>
-            <li class="nav-item menu-item mt-2 border-bottom border-2 text-nowrap">
-                <div class="nav-roo-container float-start ms-3">
-                    <img class="nav-roo" src="/img/rooYay.png" />
-                </div>
-                <a class="nav-link menu-link" asp-page="ArchivedChallenges">Archived Challenges</a>
-                <div class="nav-roo-container float-end me-3">
-                    <img class="nav-roo" src="/img/rooYay.png" />
+                    
                 </div>
             </li>
             @if (SignInManager.IsSignedIn(User))
@@ -67,32 +58,32 @@
                 {
                     <li class="nav-item menu-item mt-2 border-bottom border-2 text-nowrap">
                         <div class="nav-roo-container float-start ms-3">
-                            <img class="nav-roo" src="/img/rooYay.png" />
+                            
                         </div>
                         <a class="nav-link menu-link" asp-area="Admin" asp-page="Index">Admin Panel</a>
                         <div class="nav-roo-container float-end me-3">
-                            <img class="nav-roo" src="/img/rooYay.png" />
+                            
                         </div>
                     </li>
                 }
                 <li class="nav-item menu-item mt-2 border-bottom border-2 text-nowrap">
                     <div class="nav-roo-container float-start ms-3">
-                        <img class="nav-roo" src="/img/rooYay.png" />
+                        
                     </div>
                     <a class="nav-link menu-link" asp-area="Account" asp-page="Index">Account</a>
                     <div class="nav-roo-container float-end me-3">
-                        <img class="nav-roo" src="/img/rooYay.png" />
+                        
                     </div>
                 </li>
                 <li class="nav-item menu-item mt-2 border-bottom border-2 text-nowrap">
                     <div class="nav-roo-container float-start ms-3">
-                        <img class="nav-roo" src="/img/rooYay.png" />
+                        
                     </div>
                     <form asp-page="Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" class="d-inline-block" method="post">
                         <a onclick="this.closest('form').submit();return false;" class="nav-link menu-link" asp-page="Logout">Logout</a>
                     </form>
                     <div class="nav-roo-container float-end me-3">
-                        <img class="nav-roo" src="/img/rooYay.png" />
+                        
                     </div>
                 </li>
             }
@@ -100,20 +91,20 @@
             {
                 <li class="nav-item menu-item mt-2 border-bottom border-2 text-nowrap">
                     <div class="nav-roo-container float-start ms-3">
-                        <img class="nav-roo" src="/img/rooYay.png" />
+                        
                     </div>
                     <a class="nav-link menu-link" asp-page="Register">Register</a>
                     <div class="nav-roo-container float-end me-3">
-                        <img class="nav-roo" src="/img/rooYay.png" />
+                        
                     </div>
                 </li>
                 <li class="nav-item menu-item mt-2 border-bottom border-2 text-nowrap">
                     <div class="nav-roo-container float-start ms-3">
-                        <img class="nav-roo" src="/img/rooYay.png" />
+                        
                     </div>
                     <a class="nav-link menu-link d-inline-block" asp-page="Login">Login</a>
                     <div class="nav-roo-container float-end me-3">
-                        <img class="nav-roo" src="/img/rooYay.png" />
+                        
                     </div>
                 </li>
             }
