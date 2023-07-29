@@ -1,40 +1,253 @@
-﻿@model IndexModel
+@model IndexModel
 
+<link rel="stylesheet" href="css/team.css">
 <div class="bg-lighter-gray">
-    <div class="container py-5">
-        <div class="row px-4">
-            <h1>Sponsors</h1>
-            <hr />
-            <p>Infra sponsored by goo.gle/ctfsponsorship</p>
-            <div class="offset-md-3 col-md-6">
-                <a href="https://cloud.google.com" target="_blank"><img class="sponsor" src="img/sponsors/google.jpg" title="Google Cloud" data-bs-toggle="tooltip" data-bs-placement="top" /></a>
-                <a href="https://www.trailofbits.com/" target="_blank"><img class="sponsor" src="img/sponsors/trailofbits.jpg" title="Trail of Bits" data-bs-toggle="tooltip" data-bs-placement="top" /></a>
-                <a href="https://try.digitalocean.com/developer-cloud" target="_blank"><img class="sponsor" src="img/sponsors/digitalocean.jpg" title="DigitalOcean" data-bs-toggle="tooltip" data-bs-placement="top" /></a>
-	    </div>
+<div class="container py-5">
+    <div class="row px-4">
+        <h1>Sponsors</h1>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="our-team sponsor">
+                        <div class="picture">
+                            <a href="https://g.co/cloud"><img class="img-fluid" src="img/sponsors/google.jpg"></a>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Google Cloud</h3>
+                            <h4 class="title">Infra sponsored by goo.gle/ctfsponsorship</h4>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="our-team sponsor">
+                        <div class="picture">
+                            <a href="https://www.trailofbits.com/"><img class="img-fluid" src="img/sponsors/trailofbits.jpg"></a>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Trail of Bits</h3>
+                            <h4 class="title">Trail of Bits combines high-end security research with a real-world attacker mentality to reduce risk and fortify code.</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="our-team sponsor">
+                        <div class="picture">
+                            <a href="https://binary.ninja"><img class="img-fluid" src="img/sponsors/binja.png"></a>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Binary Ninja</h3>
+                            <h4 class="title">Binary Ninja is an interactive decompiler, disassembler, debugger, and binary analysis platform built by reverse engineers, for reverse engineers.</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
 <div class="bg-light-gray">
-    <div class="container py-5">
-        <div class="row px-4">
-            <div class="offset-md-3 col-md-6">
-                <h1>Our Team</h1>
-                <hr />
-                <img class="small-avatar" src="img/pfp/eth007.png" title="Eth007 - Challenge Developer, Infrastructure" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/matthew.png" title="Matthew ツ- Public Relations, Discord Manager" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/et3rnos.png" title="Et3rnos - Platform Developer" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/astro.png" title="Astro - Challenge Developer" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/ciaran.png" title="Ciarán - Challenge Developer" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/firepony.png" title="FIREPONY57 - Challenge Developer" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/max49.png" title="Max49 - Challenge Developer" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/puzzler7.png" title="puzzler7 - Challenge Developer" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/robin.png" title="Robin_Jadoul - Challenge Developer" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/scie.png" title="Scie - Challenge Developer" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/stephencurry.png" title="stephencurry396 - Challenge Developer" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/thebadgod.png" title="TheBadGod - Challenge Developer" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/zyphen.png" title="Zyphen - Challenge Developer" data-bs-toggle="tooltip" data-bs-placement="top" />
-                <img class="small-avatar" src="img/pfp/oreos.png" title="0x6F72656F73 - Challenge Developer" data-bs-toggle="tooltip" data-bs-placement="top" />
+        <div class="container pt-5 pb-3">
+            <h1>Our Team</h1>
+        </div>
+        <div class="container pb-5">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/eth007.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Eth007</h3>
+                            <h4 class="title">CTF Lead</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/matthew.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name" font size="9">Matthew ツ</h3>
+                            <h4 class="title">Public Relations</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/et3rnos.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Et3rnos</h3>
+                            <h4 class="title">Infrastructure Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/firepony.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">FIREPONY57</h3>
+                            <h4 class="title">Challenge Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/puzzler7.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">puzzler7</h3>
+                            <h4 class="title">Challenge Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/astro.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Astro</h3>
+                            <h4 class="title">Challenge Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/ciaran.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Ciarán</h3>
+                            <h4 class="title">Challenge Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/maple.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">
+                            maple3142
+                            <h3>
+                            <h4 class="title">Challenge Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/max49.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Max49</h3>
+                            <h4 class="title">Challenge Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/robin.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Robin_Jadoul</h3>
+                            <h4 class="title">Challenge Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/scie.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">Scie</h3>
+                            <h4 class="title">Challenge Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/stephencurry.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">stephencurry396</h3>
+                            <h4 class="title">Challenge Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/tirefire.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">tirefire</h3>
+                            <h4 class="title">Challenge Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/thebadgod.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">TheBadGod</h3>
+                            <h4 class="title">Challenge Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 col-lg-2">
+                    <div class="our-team our-team-1">
+                        <div class="picture">
+                            <img class="img-fluid" src="img/pfp/zeski.png">
+                        </div>
+                        <div class="team-content">
+                            <h3 class="name">zeski</h3>
+                            <h4 class="title">Challenge Developer</h4>
+                        </div>
+                        <ul class="social">
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

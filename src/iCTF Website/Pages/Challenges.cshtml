@@ -24,7 +24,7 @@
     List<ChallengeInfo> solvedChallengeInfos = new List<ChallengeInfo>();
     if (!signInManager.IsSignedIn(User))
     {
-        challengeInfos = await context.Challenges.Where(x => x.State == 2).OrderBy(x => x.Solves.Count).Select(x => new ChallengeInfo { Challenge = x, SolvesCount = x.Solves.Count }).ToListAsync();
+        challengeInfos = await context.Challenges.Where(x => x.State == 2).OrderByDescending(x => x.Solves.Count).Select(x => new ChallengeInfo { Challenge = x, SolvesCount = x.Solves.Count }).ToListAsync();
         categories = challengeInfos.Select(x => x.Challenge.Category).Distinct().ToList();
     }
     else
@@ -92,7 +92,7 @@
         }
         @if (challengeInfos.Count == 0 && solvedChallengeInfos.Count == 0)
         {
-            <p>ImaginaryCTF 2022 has not started yet.</p>
+            <p>ImaginaryCTF 2023 has not started yet.</p>
         }
         @foreach (string category in categories)
         {
@@ -163,7 +163,7 @@
                                 @if (configuration.GetValue<bool>("ShowWriteupsAndFlags"))
                                 {
                                     <b style="cursor: pointer" class="d-block mb-2" data-bs-toggle="collapse" href="#writeup-@(challenge.Id)">Writeup <i class="fas fa-caret-down"></i></b>
-                                    <div class="collapse" id="writeup-@(challenge.Id)">
+                                     <div class="collapse" id="writeup-@(challenge.Id)">
                                         @Markdown.ParseHtmlString(challenge.Writeup)
                                     </div>
                                     <b style="cursor: pointer" class="d-block mb-2" data-bs-toggle="collapse" href="#flag-@(challenge.Id)">Flag <i class="fas fa-caret-down"></i></b>

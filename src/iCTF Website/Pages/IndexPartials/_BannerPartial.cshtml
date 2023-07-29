@@ -3,9 +3,27 @@
         <div class="overflow-hidden">
             <img src="/img/banner.jpg" class="d-block banner-img" alt="Banner">
             <div class="position-absolute header-text text-white text-start bg-dark-smooth p-3 w-75" style="display:none">
-                <h2>Welcome to ImaginaryCTF 2022 | July 15-18, 8 PM UTC</h2>
+                <h2>Welcome to ImaginaryCTF 2023 | <a id="date"></a></h2>
                 <p><a class="anchor-link btn btn-outline-light p-0 ps-1 pe-1" asp-page="Register">Register</a> to get started and join our <a class="anchor-link btn btn-outline-light p-0 ps-1 pe-1" href="https://discord.gg/QxFdGYPd4P">Discord</a> server for more updates.</p>
             </div>
         </div>
     </div>
 </header>
+
+<script>
+var start = new Date('2023-07-21T19:00:00Z')
+.toLocaleDateString('en-US', {
+  timeZone:Intl.DateTimeFormat().resolvedOptions().timeZone,
+  timeZoneName: 'short',
+  hour: 'numeric',
+  day: 'numeric',
+  month: 'long',
+});
+var end = new Date('2023-07-23T19:00:00Z')
+.toLocaleDateString('en-US', {
+  timeZone:Intl.DateTimeFormat().resolvedOptions().timeZone,
+  day: 'numeric',
+});
+var date = start.replace(' at', `-${end},`);
+document.getElementById("date").innerText = date
+</script>

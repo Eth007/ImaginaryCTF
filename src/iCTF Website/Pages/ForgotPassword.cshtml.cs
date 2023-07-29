@@ -70,7 +70,7 @@ Please reset your password by
 <br/>
 Best Regards,
 <br/>
-ImaginaryCTF's Team
+The ImaginaryCTF Team
 ");
             return RedirectToPage("./ForgotPasswordConfirmation");
         }

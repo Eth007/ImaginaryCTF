@@ -15,7 +15,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">About</h5>
-          <p class="card-text">ImaginaryCTF 2022 is a cybersecurity <a class="gray-text text-decoration-none cool-link" href="https://ctftime.org/ctf-wtf/" target="_blank">CTF competition</a> run by <a class="gray-text text-decoration-none cool-link" href="https://imaginaryctf.org" target="_blank">ImaginaryCTF</a> with a variety of challenges for all skill levels. It runs from July 15 to July 18, starting and ending at 8 PM UTC. For more information, check out last year's challenges from <a class="gray-text text-decoration-none cool-link" href="https://ctftime.org/event/1384" target="_blank">ImaginaryCTF 2021</a>, where over 1000 teams participated.</p>
+          <p class="card-text">ImaginaryCTF 2023 is a cybersecurity <a class="gray-text text-decoration-none cool-link" href="https://ctftime.org/ctf-wtf/" target="_blank">CTF competition</a> run by <a class="gray-text text-decoration-none cool-link" href="https://imaginaryctf.org" target="_blank">ImaginaryCTF</a> with a variety of challenges for all skill levels. It runs from July <a id="start"></a> to July <a id="end"></a>, starting and ending at <a id="time"></a>. For more information, check out last year's challenges from <a class="gray-text text-decoration-none cool-link" href="https://ctftime.org/event/1670" target="_blank">ImaginaryCTF 2022</a>, with over 2000 participants.</p>
         </div>
       </div>
     </div>
@@ -32,14 +32,15 @@
       <div class="card-body">
         <h5 class="card-title">Prizes</h5>
         <p class="card-text">
-1st place - 300 USD, $250 DigitalOcean credits<br>
-2nd place - 250 USD, $250 DigitalOcean credits<br>
-3rd place - 200 USD, $250 DigitalOcean credits<br>
-4th place - 150 USD, $125 DigitalOcean credits<br>
-5th place - 150 USD, $125 DigitalOcean credits<br>
-6th-13th place - $125 DigitalOcean credits<br>
-Prizes for the best writeups at the end of the competition<br>
-Prizes are subject to change.
+1st place - 500 USD<br>
+2nd place - 300 USD<br>
+3rd place - 250 USD<br>
+4th place - 200 USD<br>
+5th place - 150 USD<br>
+Best writeup - 100 USD<br>
+
+The top 5 teams and writeup winner will also win a Binary Ninja Personal license.
+<br><br>
          </p>
       </div>
     </div>
@@ -58,27 +59,65 @@ Prizes are subject to change.
 
 <div class="bg-light-gray">
     <div class="container py-4">
-      <h2>ImaginaryCTF 2022 ends in:</h2>
+      <h2 id="main"></h2>
       <h2 id="cd"></h2>
-      <a class="btn btn-lg btn-outline btn-outline-dark rounded-button" asp-page="Register">Register Here</a>
+      <a id="register" class="btn btn-lg btn-outline btn-outline-dark rounded-button" asp-page="Register">Register Here</a>
     </div>
 </div>
 
 <script>
-// I wonder where this code is from... :P
-var countDownDate = new Date(Date.UTC(2022, 6, 18, 20, 0, 0)).getTime();
 var x = setInterval(function() {
+  var countDownDate = new Date(Date.UTC(2023, 6, 21, 19, 0, 0)).getTime();
   var now = new Date().getTime();
   var distance = countDownDate - now;
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  document.getElementById("cd").innerHTML = days + "d " + hours + "h "
+  document.getElementById("main").innerText = "ImaginaryCTF 2023 starts in:"
+  document.getElementById("cd").innerText = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
   if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("cd").innerHTML = "ImaginaryCTF 2022 has ended!";
+    countDownDate = new Date(Date.UTC(2023, 6, 23, 19, 0, 0)).getTime();
+    now = new Date().getTime();
+    distance2 = countDownDate - now;
+    var days = Math.floor(distance2 / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance2 % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance2 % (1000 * 60)) / 1000);
+    document.getElementById("main").innerText = "ImaginaryCTF 2023 ends in:";
+    document.getElementById("cd").innerText = days + "d " + hours + "h " 
+    + minutes + "m " + seconds + "s ";
+    if (distance2 < 0) {
+      clearInterval(x);
+      document.getElementById("main").innerText = "ImaginaryCTF 2023 has ended!";
+      document.getElementById("cd").innerText = "";
+      document.getElementById("register").innerText = "Check out Daily CTF Challenges";
+      document.getElementById("register").href = "https://imaginaryctf.org/";
+    }
   }
 }, 1000);
+</script>
+
+<script>
+var start = new Date('2023-07-21T19:00:00Z')
+.toLocaleDateString('en-US', {
+  timeZone:Intl.DateTimeFormat().resolvedOptions().timeZone,
+  day: 'numeric',
+});
+var end = new Date('2023-07-23T19:00:00Z')
+.toLocaleDateString('en-US', {
+  timeZone:Intl.DateTimeFormat().resolvedOptions().timeZone,
+  day: 'numeric',
+});
+var time = new Date('2023-07-23T19:00:00Z')
+.toLocaleDateString('en-US', {
+  timeZone:Intl.DateTimeFormat().resolvedOptions().timeZone,
+  timeZoneName: 'short',
+  hour: 'numeric',
+});
+var time = time.substring(time.indexOf(",") + 2);
+document.getElementById("start").innerText = start
+document.getElementById("end").innerText = end
+document.getElementById("time").innerText = time
 </script>

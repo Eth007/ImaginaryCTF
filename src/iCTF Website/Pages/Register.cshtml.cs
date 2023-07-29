@@ -122,7 +122,7 @@ Please confirm your account by
 <br/>
 Best Regards,
 <br/>
-ImaginaryCTF's Team
+The ImaginaryCTF Team
 ");
 
                 return RedirectToPage("/RegisterConfirmation", new { area = "Account" });

@@ -64,13 +64,6 @@ pre {
     margin-bottom: 5px;
 }
 
-.sponsor {
-    border-radius: 1000px;
-    height: 200px;
-    width: 200px;
-    margin-bottom: 5px;
-}
-
 .rotated {
     transition: transform 2s ease;
     transform: rotate(360deg);
@@ -98,17 +91,19 @@ pre {
 
 
 .challenge-header {
-   /* background-color: #08e5; */
-   /* border-color: #09e9; */
-    background-color: #5edb64;
-    border-color: #469e49;
+    background-color: #08e5; 
+    border-color: #09e9; 
+/*    background-color: #202A44;
+    border-color: #202A44;*/
     border-width: 2px;
 }
 
 .challenge {
-    border-color: #469e49;
+/*    border-color: #F5D033; */
+    border-color: #09e9; 
     border-width: 2px;
 }
+
 .menu-link:hover {
     color: rgba(255,255,255,.90) !important;
 }
